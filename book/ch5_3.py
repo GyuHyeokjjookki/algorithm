@@ -1,13 +1,3 @@
-import sys
-si = sys.stdin.readline
-
-def dfs(graph, v, visited):
-    visited[v] = True
-    print(v,end=' ')
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(graph, i, visited)
-
 N, M = map(int,input().split())
 
 print(N, M)
@@ -29,8 +19,8 @@ def dfs(x, y):
     return False
 
 result = 0
-for i in range(n):
-    for j in range(m):
+for i in range(N):
+    for j in range(M):
         if(dfs(i, j) == True):
             result += 1
 print(result)
