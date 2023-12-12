@@ -12,7 +12,7 @@ for i in range(t):
         if(len(arr) > 0):
             print(arr[len(arr) - 1])
         else:
-            print(0)
+            print(-1)
     if command[0] == 'pop':
         if(len(arr) > 0 ):
             print(arr.pop())
