@@ -4,7 +4,7 @@ import math
 input = sys.stdin.readline
 
 def calcStarDust(base,combo,c,skill,s):
-  result = math.floor(base * (1 + (combo * c) / 100) * (1 + (skill * s) / 100))
+  result = base * ((100 + (combo * c)) * (100 + (skill * s)))//10000
   return result
 
 N, K, C, R = map(int, input().split())
@@ -35,7 +35,7 @@ for i in range(N):
   l = int(input())
   if(l == 0):
     combo = 0
-    if fatigue >= 100:
+    if fatigue > 100:
       continue
     elif fatigue < R:
       fatigue = 0
@@ -46,8 +46,9 @@ for i in range(N):
   skill[l - 1] += 1
   combo += 1
   fatigue += p[l - 1]
-  if(fatigue >= 100):
+  if(fatigue > 100):
     starDust = -1
+    break
 
 
 print(starDust)
