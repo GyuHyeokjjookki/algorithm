@@ -10,7 +10,7 @@ for i in range(t):
         arr.append(command[1])
     if command[0] == 'top':
         if(len(arr) > 0):
-            print(arr[len(arr) - 1])
+            print(arr[-1])
         else:
             print(-1)
     if command[0] == 'pop':
@@ -25,4 +25,3 @@ for i in range(t):
             print(0)
         else:
             print(1)
-        
